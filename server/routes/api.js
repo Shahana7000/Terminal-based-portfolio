@@ -178,8 +178,8 @@ router.post('/login', (req, res) => {
     }
 });
 
-// Seed Data Endpoint
-router.post('/seed', async (req, res) => {
+// Seed Data Endpoint (GET for easier browser access)
+router.get('/seed', async (req, res) => {
     try {
         await Project.deleteMany({});
         await Education.deleteMany({});
