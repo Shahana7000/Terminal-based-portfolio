@@ -2,7 +2,9 @@ import React, { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
 import { motion } from 'framer-motion';
 
-const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
+const baseApiUrl = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
+// Ensure the URL ends with /api if it doesn't already
+const API_URL = baseApiUrl.endsWith('/api') ? baseApiUrl : `${baseApiUrl}/api`;
 
 const Terminal = () => {
     const [input, setInput] = useState('');

@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
-const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
+const baseApiUrl = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
+// Ensure the URL ends with /api if it doesn't already
+const API_URL = baseApiUrl.endsWith('/api') ? baseApiUrl : `${baseApiUrl}/api`;
 
 const AdminDashboard = () => {
     const [token, setToken] = useState(localStorage.getItem('token') || '');
