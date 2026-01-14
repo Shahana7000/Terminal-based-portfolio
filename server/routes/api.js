@@ -171,7 +171,7 @@ router.post('/resume', async (req, res) => {
 // Auth (Simple)
 router.post('/login', (req, res) => {
     const { password } = req.body;
-    if (password === 'admin123') { // Simple hardcoded password
+    if (password === process.env.ADMIN_PASSWORD) {
         res.json({ success: true, token: 'fake-jwt-token' });
     } else {
         res.status(401).json({ success: false, message: 'Invalid password' });

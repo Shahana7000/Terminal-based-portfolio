@@ -100,6 +100,7 @@ Create a `.env` file in the `server` directory:
 ```env
 PORT=5000
 MONGO_URI=your_mongodb_connection_string
+ADMIN_PASSWORD=your_admin_password
 ```
 Start the server:
 ```bash
